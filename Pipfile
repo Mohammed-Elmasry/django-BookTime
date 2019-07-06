@@ -7,6 +7,8 @@ verify_ssl = true
 
 [packages]
 django = "*"
+psycopg2 = "*"
+postgresql-server-dev-x-y = "*"
 
 [requires]
 python_version = "3.6"
