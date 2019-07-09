@@ -7,8 +7,8 @@ from main import forms
 class ContactUsView(FormView):
     template_name = "contact_form.html"
     form_class = forms.ContactForm
-    success_url = "/" # it will redirect to main page if successful
+    success_url = "/" # it is used by form_valid(form) to render on success
 
     def form_valid(self, form):
         form.send_mail()
-        return super().form_valid(form)
+        return super().form_valid(form) # after validation, render success url
