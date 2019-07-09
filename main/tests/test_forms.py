@@ -11,7 +11,7 @@ class TestForm(TestCase):
 
         self.assertTrue(form.is_valid)
 
-        with self.assertLogs('main.forms',level="Info") as cm:
+        with self.assertLogs('main.forms',level="INFO") as cm:
             form.send_mail()
 
         self.assertEqual(len(mail.outbox), 1)
@@ -24,4 +24,3 @@ class TestForm(TestCase):
         })
 
         self.assertFalse(form.is_valid())
-        
