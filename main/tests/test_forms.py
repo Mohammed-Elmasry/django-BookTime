@@ -9,7 +9,7 @@ class TestForm(TestCase):
             'message': "Hi there"
         })
 
-        self.assertTrue(form.is_valid)
+        self.assertTrue(form.is_valid())
 
         with self.assertLogs('main.forms',level="INFO") as cm:
             form.send_mail()

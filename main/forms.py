@@ -10,9 +10,9 @@ class ContactForm(forms.Form):
 
     def send_mail(self):
         logger.info("Sending email to customer service")
-        message = "From {0}\n{1}".format(
+        message = "From: {0}\n{1}".format(
             self.cleaned_data["name"],
-            self.cleaned_data["message"],
+            self.cleaned_data["message"]
         )
         send_mail("Site message", message, "site@booktime.domain",
                   ["customerservice@booktime.domain"],
