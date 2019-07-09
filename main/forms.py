@@ -1,6 +1,6 @@
 from django import forms
 from django.core.mail import send_mail
-import logging
+import logging # this is to log output on terminal -> not needed in syntax
 
 logger = logging.getLogger(__name__)
 
