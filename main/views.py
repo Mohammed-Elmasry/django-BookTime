@@ -5,9 +5,9 @@ from main import forms
 # our first class-based view definition
 
 class ContactUsView(FormView):
-    template_name = "contact_us.html"
+    template_name = "contact_form.html"
     form_class = forms.ContactForm
-    success_url = "/"
+    success_url = "/" # it will redirect to main page if successful
 
     def form_valid(self, form):
         form.send_mail()
