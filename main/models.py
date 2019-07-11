@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 
+# User-defined active manager
 
 class ActiveManager(models.Manager):
     def active(self):
