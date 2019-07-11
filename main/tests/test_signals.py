@@ -13,7 +13,7 @@ class TestSignal(TestCase):
         product.save()
 
         with open(
-            "main/fixtures/the-cathedral-and-the-bazaar.jpg", "rb"
+            "main/fixtures/the-cathedral-the-bazaar.jpg", "rb"
         ) as f:
             image = models.ProductImage(
                 product = product,
@@ -33,4 +33,3 @@ class TestSignal(TestCase):
             assert image.thumbnail.read() == expected_content
         image.thumbnail.delete(save=False)
         image.image.delete(save=False)
-        
