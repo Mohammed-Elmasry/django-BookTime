@@ -10,8 +10,6 @@ class ActiveManager(models.Manager):
         return self.filter(active=True)
 
 
-
-
 class Product(models.Model):
 
     name = models.CharField(max_length=32)
