@@ -17,7 +17,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RunPython(
+            # note that we're not calling the functions, we're providing them as is (pieces of code to run)
             capitlize, #forward function
-            migrations.RunPython.noop() #backward function
+            migrations.RunPython.noop #backward function
         )
     ]
