@@ -10,6 +10,7 @@ django = "*"
 psycopg2 = "*"
 postgresql-server-dev-x-y = "*"
 libpq-dev = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.6"
