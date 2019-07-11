@@ -26,7 +26,7 @@ class TestSignal(TestCase):
         image.refresh_from_db()
 
         with open(
-            "main/fixtures/the-cathedral-and-the-bazaar.thumb.jpg",
+            "main/fixtures/the-cathedral-the-bazaar.thumb.jpg",
             "rb",
         ) as f:
             expected_content = f.read()
