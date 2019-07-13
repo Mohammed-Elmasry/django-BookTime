@@ -11,7 +11,7 @@ class ActiveManager(models.Manager):
 
 class ProductTagManager(models.Manager):
     def get_by_natural_key(self, slug):
-        self.slug = slug
+        return self.get(slug=slug)
 
 class ProductTag(models.Model):
     name = models.CharField(max_length=32)
