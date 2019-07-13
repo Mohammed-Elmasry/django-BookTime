@@ -1,0 +1,74 @@
+[
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Sci-Fi",
+    "slug": "sci-fi",
+    "description": "Science fiction",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Comedy",
+    "slug": "comedy",
+    "description": "Comedy and humor",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Romance",
+    "slug": "romance",
+    "description": "Love and Sexuality",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Drama",
+    "slug": "drama",
+    "description": "Everyday life.",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "OpenSource",
+    "slug": "opensource",
+    "description": "Software development.",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Teamwork",
+    "slug": "teamwork",
+    "description": "Push yourself beyond the boundaries of success.",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Finance",
+    "slug": "finance",
+    "description": "Monetary and banking theories.",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Finance",
+    "slug": "finance",
+    "description": "Monetary and banking theories.",
+    "active": true
+  }
+}
+]

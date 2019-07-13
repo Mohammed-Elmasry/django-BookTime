@@ -10,7 +10,6 @@ class ActiveManager(models.Manager):
         return self.filter(active=True)
 
 
-
 class ProductTag(models.Model):
     name = models.CharField(max_length=32)
     slug = models.SlugField(max_length=48)
@@ -19,6 +18,9 @@ class ProductTag(models.Model):
 
     def __str__(self):
         return self.name
+
+    def natural_key(self):
+        return (self.slug, )
 
 class Product(models.Model):
 
