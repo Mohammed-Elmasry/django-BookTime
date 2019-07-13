@@ -10,13 +10,13 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ["in_stock"]
     search_fields = ["name"]
     prepopulated_fields = {"slug" : ("name", )}  # it is populated AUTOMATICALLY
+    autocomplete_fields = ("tag",)
 
 class ProductTagAdmin(admin.ModelAdmin):
     list_display = ["name", "slug"]
     list_filter = ["active"]
     search_fields = ["name"]
     prepopulated_fields = {"slug" : ("name",)}
-    autocomplete_fields = ("product",)
 
 class ProductImageAdmin(admin.ModelAdmin):
     list_display = ["thumbnail_tag", "product_name"]
