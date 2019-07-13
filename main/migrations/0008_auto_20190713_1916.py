@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='product',
-            name='tag',
+            name='tags',
             field=models.ManyToManyField(blank=True, to='main.ProductTag'),
         ),
     ]
