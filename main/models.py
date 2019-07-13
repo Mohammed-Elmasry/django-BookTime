@@ -10,9 +10,17 @@ class ActiveManager(models.Manager):
         return self.filter(active=True)
 
 
+
+class ProductTag(models.Model):
+    name = models.CharField(max_length=32)
+    slug = models.SlugField(max_length=48)
+    description = models.TextField(blank=True)
+    active = models.BooleanField(default = True)
+
 class Product(models.Model):
 
     name = models.CharField(max_length=32)
+    tag = models.ManyToManyField(ProductTag, blank=True)
     description = models.TextField(blank = True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     slug = models.SlugField(max_length=48)
@@ -24,6 +32,7 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 class ProductImage(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -32,13 +41,4 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return self.product.name + " (front cover)"
-
-
-class ProductTag(models.Model):
-    product = models.ManyToManyField(Product, blank=True)
-    name = models.CharField(max_length=32)
-    slug = models.SlugField(max_length=48)
-    description = models.TextField(blank=True)
-    active = models.BooleanField(default = True)
-
 
