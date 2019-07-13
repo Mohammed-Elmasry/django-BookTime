@@ -20,7 +20,7 @@ class ProductTagAdmin(admin.ModelAdmin):
     autocomplete_fields = ("product",)
 
 class ProductImageAdmin(admin.ModelAdmin):
-    list_filter = ["thumbnail_tag", "product_name"]
+    # list_filter = ["thumbnail_tag", "product_name"]
     readonly_fields = ["thumbnail"]
     search_fields = ["product_name"]
 
