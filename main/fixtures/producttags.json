@@ -2,9 +2,9 @@
 {
   "model": "main.producttag",
   "fields": {
-    "name": "Sci-Fi",
+    "name": "Science Fiction",
     "slug": "sci-fi",
-    "description": "Science fiction",
+    "description": "Science fiction, futuristic feel, and mythology",
     "active": true
   }
 },
@@ -50,15 +50,6 @@
     "name": "Teamwork",
     "slug": "teamwork",
     "description": "Push yourself beyond the boundaries of success.",
-    "active": true
-  }
-},
-{
-  "model": "main.producttag",
-  "fields": {
-    "name": "Finance",
-    "slug": "finance",
-    "description": "Monetary and banking theories.",
     "active": true
   }
 },
