@@ -19,6 +19,7 @@ class Command(BaseCommand):
         c = Counter()
         reader = csv.DictReader(options.pop("csvfile"))
         if reader:
+            print("reader created")
             for row in reader:
                 product, created = models.Product.objects.get_or_create(
                     name = row["name"], price=row["price"]
