@@ -7,3 +7,10 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+
+    def warn(self, warning=""):
+        print(bcolors.FAIL + warning + bcolors.ENDC)
+
+    def info(self, message=""):
+        print(self.warning + str(message) + self.ENDC)

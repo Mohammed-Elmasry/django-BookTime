@@ -18,36 +18,44 @@ class Command(BaseCommand):
         self.stdout.write("Importing products")
         c = Counter()
         reader = csv.DictReader(options.pop("csvfile"))
-        for row in reader:
-            product, created = models.Product.objects.get_or_create(
-                name = row["name"], price=row["price"]
-            )
-            product.description = row["description"]
-            product.slug = row["slug"]
-            for import_tag in row["tag"].split("|"):
-                tag, tag_created = models.ProductTag.objects.get_or_create(
-                    name = import_tag
+        if reader:
+            for row in reader:
+                product, created = models.Product.objects.get_or_create(
+                    name = row["name"], price=row["price"]
                 )
-                product.tags.add(tag)
-                c["tags"] += 1
-                if tag_created:
-                    c["tags_created"] += 1
-            with open(os.path.join(
-                options["image_basedir"], row["image_filename"],
-            ), "rb") as f:
-                image = models.ProductImage(
-                    product=product,
-                    image = ImageFile(
-                        f, name=row["image_filename"]
+                product.description = row["description"]
+                product.slug = slugify(row["name"])
+                for import_tag in row["tags"].split("|"):
+                    tag, tag_created = models.ProductTag.objects.get_or_create(
+                        name = import_tag
+                    )
+                    product.tags.add(tag)
+                    c["tags"] += 1
+                    if tag_created:
+                        c["tags_created"] += 1
+                with open(
+                    os.path.join(
+                        options["image_basedire"],
+                        row["image_filename"],
                     ),
-                )
-                image.save()
-                c["images"] += 1
-            product.save()
-            c["products"] += 1
-            if created:
-                c["products_created"] += 1
+                "rb",
+                ) as f:
+                    image = models.ProductImage(
+                        product=product,
+                        image = ImageFile(
+                            f, name=row["image_filename"]
+                        ),
+                    )
+                    image.save()
+                    c["images"] += 1
+                product.save()
+                c["products"] += 1
+                if created:
+                    c["products_created"] += 1
 
+        else:
+            print("csv file not found!")
+            return 101
         self.stdout.write("Products processed = %d (created=%d)"
                           % (c["products"], c["products_created"]))
 

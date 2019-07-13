@@ -30,7 +30,7 @@ class ProductTag(models.Model):
 class Product(models.Model):
 
     name = models.CharField(max_length=32)
-    tag = models.ManyToManyField(ProductTag, blank=True)
+    tags = models.ManyToManyField(ProductTag, blank=True)
     description = models.TextField(blank = True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     slug = models.SlugField(max_length=48)
