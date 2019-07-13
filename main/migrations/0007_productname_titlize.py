@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RunPython(
-            make_title,
-            migrations.RunPython.noop
+            make_title, #forward function
+            migrations.RunPython.noop #backward function -> if reversible
         )
     ]
