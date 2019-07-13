@@ -9,8 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ["active", "in_stock", "date_updated"]
     list_editable = ["in_stock"]
     search_fields = ["name"]
-    prepopulated_fields = {"slug" : ("name", )}
-
+    prepopulated_fields = {"slug" : ("name", )}  # it is populated AUTOMATICALLY
 
 class ProductTagAdmin(admin.ModelAdmin):
     list_display = ["name", "slug"]
@@ -20,7 +19,7 @@ class ProductTagAdmin(admin.ModelAdmin):
     autocomplete_fields = ("product",)
 
 class ProductImageAdmin(admin.ModelAdmin):
-    # list_filter = ["thumbnail_tag", "product_name"]
+    list_display = ["thumbnail_tag", "product_name"]
     readonly_fields = ["thumbnail"]
     search_fields = ["product_name"]
 
