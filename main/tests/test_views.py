@@ -29,11 +29,12 @@ class TestPage(TestCase):
         models.Product.objects.create(
             name = "A tale of two cities",
             slug = "tale-two-cities",
-            prce = Decimal("2.00"),
+            price = Decimal("2.00"),
             active = False
         )
 
         response = self.client.get(
+
             reverse("products", kwargs={"tag":"all"})
         )
 

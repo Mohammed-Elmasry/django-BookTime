@@ -24,7 +24,6 @@ class ProductListView(ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        print("Moody here's your stuff : ", self.kwargs)
         tag = self.kwargs["tag"]
         self.tag = None
         if tag != 'all':
@@ -32,8 +31,7 @@ class ProductListView(ListView):
                 models.ProductTag, slug=tag
             )
         if self.tag:
-            product = models.Product.objects.active().filter(tags = self.tag)
+            products = models.Product.objects.active().filter(tags = self.tag)
         else:
-            products = models.objects.active()
+            products = models.Product.objects.active()
         return products.order_by("name")
-
