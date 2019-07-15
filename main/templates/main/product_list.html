@@ -5,6 +5,7 @@
     {% for product in page_obj %}
         <p>{{ product.name }}</p>
         <p>
+            <!-- url gets is like reverse() but for html -->
             <a href="{% url 'products' product.slug %}">See it here</a>
         </p>
         {% if not forloop.last %}
