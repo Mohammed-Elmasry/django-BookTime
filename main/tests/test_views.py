@@ -34,7 +34,6 @@ class TestPage(TestCase):
         )
 
         response = self.client.get(
-
             reverse("products", kwargs={"tag":"all"})
         )
 
