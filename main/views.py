@@ -1,5 +1,6 @@
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from main import forms
 from main import models
@@ -35,3 +36,5 @@ class ProductListView(ListView):
         else:
             products = models.Product.objects.active()
         return products.order_by("name")
+
+
