@@ -12,7 +12,7 @@ class ContactUsView(FormView):
     success_url = "/" # it is used by form_valid(form) to render on success
 
     # overriding the function to add extra functionality BEFORE the original runs aka super()
-    
+
     def form_valid(self, form):
         form.send_mail()
         return super().form_valid(form) # after validation, render success url
